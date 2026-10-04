@@ -1,0 +1,185 @@
+PERSONAL WEBSITE PLAN
+
+1. GOAL
+Primary goal:
+Make a recruiter understand who I am, what I’ve built, and that I can actually
+ship software within ~60 seconds.
+
+Target:
+SWE / AI / Data / ML internships
+
+Overall vibe:
+Clean, technical, visually impressive, but not overdesigned.
+
+
+2. HERO
+
+Praveen Vadlamani
+
+Short headline:
+[figure this out later]
+
+Possible subheadline:
+UC Berkeley Data Science student building software, AI systems, and data products.
+
+Buttons:
+- View Projects
+- Resume
+- GitHub
+- LinkedIn
+
+Visual idea:
+Something interactive / animated rather than just a static headshot.
+
+
+3. FEATURED PROJECTS
+
+AUTHENT
+What it is:
+[1–2 sentences]
+
+What I personally built:
+[...]
+
+Tech:
+[...]
+
+Visual:
+- 15–30 sec demo video
+- actual product UI
+- maybe hover → video automatically plays
+
+Links:
+- GitHub
+- Live demo if available
+
+
+LIFEQUEST
+What it is:
+[...]
+
+What I built:
+[...]
+
+Tech:
+[...]
+
+Visual:
+- screen recording / animated demo
+
+
+GOLDEN GATE GARBA
+What it is:
+[...]
+
+What I built:
+[...]
+
+Tech:
+[...]
+
+Visual:
+- live website
+- short interaction recording
+
+
+4. EXPERIENCE
+
+Orcana.AI
+- Role
+- 2–3 strongest things I actually did
+- technologies
+
+DataAnnotation
+- AI/data work
+- concise explanation
+
+Keep this section much shorter than the project section.
+
+
+5. ABOUT
+
+Very short.
+
+UC Berkeley
+Data Science
+Interested in SWE + AI + data infrastructure
+
+Could mention:
+- building things
+- tennis
+- whatever gives a little personality
+
+Don't turn this into an autobiography.
+
+
+6. VISUAL / INTERACTION IDEAS
+
+- Videos autoplay silently when project enters viewport
+- Smooth project transitions
+- Interactive hero
+- subtle Three.js element
+- animated tech stack
+- cursor interactions
+- dark/light mode
+- smooth scrolling
+
+IMPORTANT:
+Animations should make the projects easier to understand, not distract
+from them.
+
+
+7. DESIGN REFERENCES
+
+Paste screenshots / links of websites I like here.
+
+For each:
+- What I like
+- What I don't like
+- Feature I want to steal/adapt
+
+
+8. ASSETS I NEED
+
+[ ] Resume PDF
+[ ] Authent video
+[ ] LifeQuest video
+[ ] Golden Gate Garba video
+[ ] project screenshots
+[ ] GitHub links
+[ ] LinkedIn
+[ ] headshot if using one
+[ ] project descriptions
+[ ] tech stacks
+
+
+9. TECH STACK
+
+Likely:
+Next.js
+TypeScript
+Tailwind
+Framer Motion
+Three.js / React Three Fiber if useful
+Vercel
+
+Videos:
+compressed MP4/WebM
+lazy loaded
+
+
+10. V1 REQUIREMENTS
+
+Homepage
+Hero
+3 featured projects
+Project videos
+Experience
+Skills
+Resume
+GitHub
+LinkedIn
+Contact
+Responsive mobile design
+
+Anything else is V2.
