@@ -79,3 +79,12 @@ h1>span{color:var(--text)}
 .about{margin-top:64px;padding:48px 0;gap:40px}.about-copy p{font-size:15px}
 footer{padding:28px 0}
 @media(max-width:650px){.wrap{width:calc(100% - 40px)}.header{height:72px}.hero{padding:56px 0 64px}h1{letter-spacing:-3px}.projects{grid-template-columns:1fr;row-gap:34px}.project-preview{border-radius:18px}.project-info{padding:18px 2px 0}.experience{margin-top:56px}.about{margin-top:40px}.projects>.section-heading{margin-bottom:0}}
+
+/* A restrained navy accent follows the edge of the blue button. */
+.orcana-button{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(135deg,#2458a0 0%,#1c4888 55%,#193e76 100%);color:#fff;box-shadow:inset 0 1px 0 #ffffff24,inset 0 -1px 0 #102b5533,0 4px 10px #183b7012;transition:transform .2s,box-shadow .2s,filter .2s}
+.orcana-button:hover{color:#fff;filter:brightness(1.06);transform:translateY(-2px);box-shadow:inset 0 1px 0 #ffffff30,0 6px 16px #183b7020}
+.orcana-button::before{content:'';position:absolute;inset:0;padding:2.5px;border-radius:inherit;background:conic-gradient(from var(--orcana-angle),transparent 0deg 220deg,rgba(126,182,255,0) 235deg,rgba(126,182,255,.15) 255deg,rgba(126,182,255,.5) 280deg,#b4d5ff 305deg,rgba(126,182,255,.5) 330deg,rgba(126,182,255,.15) 350deg,rgba(126,182,255,0) 360deg);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;pointer-events:none;animation:orcana-border 6s linear infinite}
+.orcana-button:focus-visible{outline-color:#194a92}
+@property --orcana-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes orcana-border{to{--orcana-angle:360deg}}
+@media(prefers-reduced-motion:reduce){.orcana-button::before{animation:none}}
