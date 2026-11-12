@@ -4,7 +4,7 @@ const portfolio = {
   projects: {
     authent: { name: 'Authent', description: '', stack: '', url: '', video: '', gif: './Authent.gif' },
     lifequest: { name: 'LifeQuest', description: '', stack: '', url: 'https://giaequityplay.itch.io/gia-project', video: '', gif: './EquityPlay.gif' },
-    garba: { name: 'Golden Gate Garba', description: '', stack: '', url: '', video: '', gif: './GoldenGateGarba.gif' }
+    garba: { name: 'Golden Gate Garba', description: '', stack: '', url: 'https://goldengategarba.org/', video: '', gif: './GoldenGateGarba.gif' }
   }
 };
 
@@ -24,15 +24,38 @@ const videoObserver = new IntersectionObserver(entries => entries.forEach(({ tar
 }), { threshold: 0.35 });
 Object.entries(portfolio.projects).forEach(([key, project]) => {
   const article = document.querySelector(`[data-project="${key}"]`);
+  if (!article) return;
   if (project.description) article.querySelector('.project-description').textContent = project.description;
   if (project.stack) { article.querySelector('.project-meta').hidden = false; article.querySelector('.project-meta span:last-child').textContent = project.stack; }
   if (project.gif && !project.video) {
+    const preview = article.querySelector('.project-preview');
     const image = document.createElement('img');
-    image.src = project.gif;
     image.alt = `${project.name} project demo`;
-    image.loading = 'lazy';
     image.className = 'project-demo';
-    article.querySelector('.project-preview').replaceChildren(image);
+    image.id = `demo-${key}`;
+    image.src = project.gif;
+    image.loading = 'lazy';
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'demo-toggle';
+    toggle.setAttribute('aria-pressed', 'false');
+    toggle.setAttribute('aria-controls', image.id);
+    toggle.setAttribute('aria-label', `Keep ${project.name} demo clear`);
+    toggle.innerHTML = '<span class="demo-hint" aria-hidden="true"><span class="hover-hint">Hover to bring into focus</span><span class="touch-hint">Tap to bring into focus</span></span>';
+    preview.replaceChildren(image, toggle);
+    function setClear(value) {
+      article.classList.toggle('demo-pinned', value);
+      toggle.setAttribute('aria-pressed', String(value));
+      toggle.setAttribute('aria-label', `${value ? 'Blur' : 'Keep'} ${project.name} demo${value ? '' : ' clear'}`);
+    }
+    toggle.addEventListener('click', () => setClear(!article.classList.contains('demo-pinned')));
+    article.addEventListener('keydown', event => {
+      if (event.key === 'Escape') setClear(false);
+    });
+    image.addEventListener('error', () => {
+      toggle.querySelector('.demo-hint').textContent = 'Demo unavailable';
+      toggle.disabled = true;
+    });
   }
   if (project.video) {
     const video = document.createElement('video');
