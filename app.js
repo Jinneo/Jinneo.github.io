@@ -3,7 +3,7 @@ const portfolio = {
   resume: '', github: '', linkedin: '', contact: '',
   projects: {
     authent: { name: 'Authent', description: '', stack: '', url: 'https://chromewebstore.google.com/detail/authent/kgkfhdmknbncjpbccambbggelfnnobim', video: '', gif: './Authent.gif' },
-    lifequest: { name: 'LifeQuest', description: '', stack: '', url: 'https://giaequityplay.itch.io/gia-project', video: '', gif: './EquityPlay.gif' },
+    lifequest: { name: 'EquityPlay', description: '', stack: '', url: 'https://giaequityplay.itch.io/gia-project', video: '', gif: './EquityPlay.gif' },
     garba: { name: 'Golden Gate Garba', description: '', stack: '', url: 'https://goldengategarba.org/', video: '', gif: './GoldenGateGarba.gif' },
     oira: { name: 'OIRA AI Chatbot', description: '', stack: '', url: '', video: './testclip.mp4', gif: '' },
     bridge: { name: 'BRIDGE', description: '', stack: '', url: '', video: './bridge.mp4', gif: '' },
