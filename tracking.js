@@ -2,8 +2,6 @@
   const endpoint = window.PORTFOLIO_TRACKING_ENDPOINT;
   if (!endpoint) return;
   try { if (new URL(endpoint).protocol !== 'https:') return; } catch { return; }
-  const notice = document.querySelector('[data-tracking-notice]');
-  if (notice) notice.hidden = false;
   const track = event => {
     if (!event.isTrusted || (event.type === 'auxclick' && event.button !== 1)) return;
     try {
