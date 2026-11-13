@@ -4,7 +4,8 @@ const portfolio = {
   projects: {
     authent: { name: 'Authent', description: '', stack: '', url: '', video: '', gif: './Authent.gif' },
     lifequest: { name: 'LifeQuest', description: '', stack: '', url: 'https://giaequityplay.itch.io/gia-project', video: '', gif: './EquityPlay.gif' },
-    garba: { name: 'Golden Gate Garba', description: '', stack: '', url: 'https://goldengategarba.org/', video: '', gif: './GoldenGateGarba.gif' }
+    garba: { name: 'Golden Gate Garba', description: '', stack: '', url: 'https://goldengategarba.org/', video: '', gif: './GoldenGateGarba.gif' },
+    oira: { name: 'OIRA AI Chatbot', description: '', stack: 'LangChain · GPT-3.5 · Custom vector database', url: '', video: './testclip.mp4', gif: '' }
   }
 };
 
@@ -35,26 +36,12 @@ Object.entries(portfolio.projects).forEach(([key, project]) => {
     image.id = `demo-${key}`;
     image.src = project.gif;
     image.loading = 'lazy';
-    const toggle = document.createElement('button');
-    toggle.type = 'button';
-    toggle.className = 'demo-toggle';
-    toggle.setAttribute('aria-pressed', 'false');
-    toggle.setAttribute('aria-controls', image.id);
-    toggle.setAttribute('aria-label', `Keep ${project.name} demo clear`);
-    toggle.innerHTML = '<span class="demo-hint" aria-hidden="true"><span class="hover-hint">Hover to bring into focus</span><span class="touch-hint">Tap to bring into focus</span></span>';
-    preview.replaceChildren(image, toggle);
-    function setClear(value) {
-      article.classList.toggle('demo-pinned', value);
-      toggle.setAttribute('aria-pressed', String(value));
-      toggle.setAttribute('aria-label', `${value ? 'Blur' : 'Keep'} ${project.name} demo${value ? '' : ' clear'}`);
-    }
-    toggle.addEventListener('click', () => setClear(!article.classList.contains('demo-pinned')));
-    article.addEventListener('keydown', event => {
-      if (event.key === 'Escape') setClear(false);
-    });
+    preview.replaceChildren(image);
     image.addEventListener('error', () => {
-      toggle.querySelector('.demo-hint').textContent = 'Demo unavailable';
-      toggle.disabled = true;
+      const message = document.createElement('p');
+      message.className = 'preview-placeholder';
+      message.textContent = `${project.name} demo unavailable`;
+      preview.replaceChildren(message);
     });
   }
   if (project.video) {
